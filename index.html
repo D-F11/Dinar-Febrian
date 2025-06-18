@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dinar Febrian - Beranda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0c6e6dc.js" crossorigin="anonymous"></script>
+  <title>Slider Gambar</title>
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header {
+  background: url("img/1396715.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+   header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* overlay hitam transparan */
+  z-index: 0;
+}
+
+    header > * {
+  position: relative;
+  z-index: 1;
+}
+
+    nav { display: flex; justify-content: center; gap: 20px; background: #fff; padding: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    nav a { text-decoration: none; color: #007bff; font-weight: 600; }
+    nav a:hover { color: #0056b3; }
+    footer { text-align: center; padding: 20px; background: #222; color: white; margin-top: 40px; }
+    header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 10%;
+      border: 4px solid white;
+      object-fit: cover;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .slider-container {
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 1s ease;
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 300px;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="img/Dinar.jpg" alt="Foto Profil">
+    <h1>Dinar Febrian</h1>
+    <p>Design Engineer | Mold Design & Special Purpose Machine Design</p>
+  </header>
+
+  <nav>
+    <a href="tentang.html">About Me</a>
+    <a href="portofolio.html">Last Education</a>
+    <a href="kontak.html">Work & Internship Experience </a>
+    <a href="organisasi.html">Organizational Experience </a>
+    <a href="sertifikasi.html">Certifications & Seminars </a>
+    <a href="skil.html">Skils </a>
+    <a href="hobi.html">Hobbies and passions </a>
+    <a href="https://wa.me/6282295292414" target="_blank" style="color: green;"><i class="fab fa-whatsapp"></i> Contact me</a>
+  </nav>
+
+  <div class="slider-container">
+    <div class="slider-track" id="slider-track">
+      <div class="slide"><img src="img/1396715.png" alt="Gambar 1"></div>
+      <div class="slide"><img src="img/1396849.png" alt="Gambar 2"></div>
+      <div class="slide"><img src="img/1396920.png" alt="Gambar 3"></div>
+    </div>
+  </div>
+
+  <script>
+    const track = document.getElementById('slider-track');
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function moveSlide() {
+      index = (index + 1) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    setInterval(moveSlide, 3000); // Ganti slide tiap 3 detik
+  </script>
+
+  <main style="text-align: center; padding: 40px;">
+    <h2>Selamat Datang di Website Pribadi Saya!</h2>
+    <p>Silakan klik menu di atas untuk melihat profil lengkap, pengalaman, dan kontak saya.</p>
+  </main>
+
+  <footer>
+    &copy; 2025. Dinar Febrian
+  </footer>
+
+</body>
+</html>
